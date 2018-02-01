@@ -1,0 +1,64 @@
+Preparation:
+Enter "about:config" in the firefox address bar and press enter.
+Press the button "I'll be careful, I promise!"
+Follow the instructions below...
+Getting started:
+privacy.firstparty.isolate = true
+A result of the Tor Uplift effort, this preference isolates all browser identifier sources (e.g. cookies) to the first party domain, with the goal of preventing tracking across different domains.
+privacy.resistFingerprinting = true
+A result of the Tor Uplift effort, this preference makes Firefox more resistant to browser fingerprinting.
+privacy.trackingprotection.enabled = true
+This is Mozilla’s new built in tracking protection. It uses Disconnect.me filter list, which is redundant if you are already using uBlock Origin 3rd party filters, therefore you should set it to false if you are using the add-on functionalities.
+browser.cache.offline.enable = false
+Disables offline cache.
+browser.safebrowsing.malware.enabled = false
+Disable Google Safe Browsing malware checks. Security risk, but privacy improvement.
+browser.safebrowsing.phishing.enabled = false
+Disable Google Safe Browsing and phishing protection. Security risk, but privacy improvement.
+browser.send_pings = false
+The attribute would be useful for letting websites track visitors’ clicks.
+browser.sessionstore.max_tabs_undo = 0
+Even with Firefox set to not remember history, your closed tabs are stored temporarily at Menu -> History -> Recently Closed Tabs.
+browser.urlbar.speculativeConnect.enabled = false
+Disable preloading of autocomplete URLs. Firefox preloads URLs that autocomplete when a user types into the address bar, which is a concern if URLs are suggested that the user does not want to connect to. Source
+dom.battery.enabled = false
+Website owners can track the battery status of your device. Source
+dom.event.clipboardevents.enabled = false
+Disable that websites can get notifications if you copy, paste, or cut something from a web page, and it lets them know which part of the page had been selected.
+geo.enabled = false
+Disables geolocation.
+media.navigator.enabled = false
+Websites can track the microphone and camera status of your device.
+network.cookie.cookieBehavior = 1
+Disable cookies
+0 = Accept all cookies by default
+1 = Only accept from the originating site (block third party cookies)
+2 = Block all cookies by default
+network.cookie.lifetimePolicy = 2
+cookies are deleted at the end of the session
+0 = Accept cookies normally
+1 = Prompt for each cookie
+2 = Accept for current session only
+3 = Accept for N days
+network.http.referer.trimmingPolicy = 2
+Send only the scheme, host, and port in the Referer header
+0 = Send the full URL in the Referer header
+1 = Send the URL without its query string in the Referer header
+2 = Send only the scheme, host, and port in the Referer header
+network.http.referer.XOriginPolicy = 2
+Only send Referer header when the full hostnames match. (Note: if you notice significant breakage, you might try 1 combined with an XOriginTrimmingPolicy tweak below.) Source
+0 = Send Referer in all cases
+1 = Send Referer to same eTLD sites
+2 = Send Referer only when the full hostnames match
+network.http.referer.XOriginTrimmingPolicy = 2
+When sending Referer across origins, only send scheme, host, and port in the Referer header of cross-origin requests. Source
+0 = Send full url in Referer
+1 = Send url without query string in Referer
+2 = Only send scheme, host, and port in Referer
+webgl.disabled = true
+WebGL is a potential security risk. Source
+Related Information
+ffprofile.com - Helps you to create a Firefox profile with the defaults you like.
+mozillazine.org - Security and privacy-related preferences.
+user.js Firefox hardening stuff - This is a user.js configuration file for Mozilla Firefox that's supposed to harden Firefox's settings and make it more secure.
+Privacy Settings - A Firefox addon to alter built-in privacy settings easily with a toolbar panel.
